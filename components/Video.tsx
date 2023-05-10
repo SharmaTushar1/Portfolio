@@ -10,6 +10,7 @@ const Video = ({url}: Props) => {
       loop
       autoPlay
       muted
+      className='fixed right-0 bottom-0 min-w-full min-h-full -z-[1]'
     >
       <source src={url} type='video/mp4' />
     </video>

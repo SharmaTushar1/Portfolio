@@ -6,14 +6,17 @@ type Props = {
 
 const Video = ({url}: Props) => {
   return (
-    <video
-      loop
-      autoPlay
-      muted
-      className='fixed right-0 bottom-0 min-w-full min-h-full -z-[1]'
-    >
-      <source src={url} type='video/mp4' />
-    </video>
+    <>
+      <video
+        loop
+        autoPlay
+        muted
+        className='fixed right-0 bottom-0 min-w-full min-h-full -z-[2]'
+      >
+        <source src={url} type='video/mp4' />
+      </video>
+      <div className='absolute top-0 bottom-0 w-full h-full bg-[rgba(1,1,1,0.5)] -z-[1]'></div>
+    </>
   )
 }
 

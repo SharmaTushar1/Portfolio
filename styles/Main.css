@@ -1,0 +1,25 @@
+#hi {
+  animation: fadeInOut 4s linear;
+  animation-fill-mode: forwards;
+}
+
+#me {
+  animation: fadeInOut 6s linear;
+  animation-fill-mode: forwards;
+}
+
+#greetings {
+  animation: fadeInOut 6s linear forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

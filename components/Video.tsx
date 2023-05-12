@@ -15,7 +15,6 @@ const Video = ({url}: Props) => {
       >
         <source src={url} type='video/mp4' />
       </video>
-      <div className='absolute top-0 bottom-0 w-full h-full bg-[rgba(1,1,1,0.5)] -z-[1]'></div>
     </>
   )
 }

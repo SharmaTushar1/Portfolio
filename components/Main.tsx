@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Video from './Video';
 import Head from 'next/head';
 import {Poppins} from 'next/font/google';
 import Navbar from './Navbar';
+import Hero from './Hero';
 
 const poppinsBold = Poppins({
   weight: '800',
@@ -15,6 +16,9 @@ const poppinsNormal = Poppins({
 });
 
 const Main = () => {
+
+  const [animation, setAnimation] = useState(true); // initially I'll show animation and after that set it to false and load main
+
 
   useEffect(() => {
     const hi = document.getElementById('hi');
@@ -40,6 +44,7 @@ const Main = () => {
     setTimeout(() => {
       intro?.classList.add('hidden'); // hide intro
       actualContent?.classList.remove('hidden');
+      setAnimation(false);
 
     }, 16000);
 
@@ -53,8 +58,9 @@ const Main = () => {
         <title>Tushar Sharma</title>
       </Head>
       <Video url="/aerial1.mp4" />
+      <div className='absolute top-0 bottom-0 w-full h-full bg-[rgba(1,1,1,0.5)] -z-[1]'></div>
 
-      <Navbar />
+      {!animation && <Navbar />}
 
       <div className={`w-screen h-screen flex items-center ${poppinsNormal.className}`}>
         {/* Intro container */}
@@ -64,10 +70,14 @@ const Main = () => {
           <div id='greetings' className='text-7xl relative bottom-4'>Thanks for visiting!!</div>
         </div>
         {/* Actual about me container */}
-        <div id='actual-content' className=''>
-          
-        </div>
+        {!animation && <Hero />}
       </div>
+
+      {/* Only load the remaining content when the animation has finished. */}
+
+      {!animation && <>
+        
+      </>}
 
     </div>
   )

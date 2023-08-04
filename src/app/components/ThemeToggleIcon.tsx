@@ -7,8 +7,7 @@ import { useTheme } from 'next-themes';
 
 export default function ThemeToggleIcon() {
   const { theme, setTheme } = useTheme();
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const [isDarkMode, setIsDarkMode] = useState(theme==='dark' || false);
   return (
     <div className='cursor-pointer'>
       {isDarkMode

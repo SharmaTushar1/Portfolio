@@ -18,10 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className='bg-slate-200 dark:bg-slate-800 text-black dark:text-white'>
+      <body className='bg-gray-100 dark:bg-zinc-900 text-zinc-900 dark:text-gray-100'>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <Navbar />
-          {children}
+          <div className='mt-16'>
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex w-full flex-col mt-auto">
-      <div className="flex w-min-fit mx-auto">
+    <footer className="flex flex-col mt-auto mx-auto w-max-fit">
+      <div className="flex w-max-fit mx-auto">
         <Link href="https://www.linkedin.com/in/tusharsharma31" target="_blank">
           <Image className="px-2" width={48} height={48} src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn"/>
         </Link>
@@ -24,7 +24,7 @@ export default function Footer() {
           <Image className="px-2" width={48} height={48} src={'https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-buy-me-a-coffee-help-creators-receive-support-from-their-audience-logo-color-tal-revivo.png'} alt="BuyMeACoffee" />
         </Link>
       </div>
-      <div className="flex w-min-fit mx-auto">
+      <div className="flex w-max-fit mx-auto">
       © {new Date().getUTCFullYear()} Tushar Sharma
       </div>
     </footer>

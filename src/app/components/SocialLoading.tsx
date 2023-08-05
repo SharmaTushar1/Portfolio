@@ -9,7 +9,12 @@ export default function SocialLoading() {
     <div className=''>
       <div className="w-screen h-screen bg-zinc-50 dark:bg-zinc-950 absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center flex-col">
         <div className='w-fit h-fit'>
-          <div className="loader"></div>
+          <div className="jumping-dots-loader">
+            <span className='bg-zinc-950 dark:bg-zinc-50'></span>
+            <span className='bg-zinc-950 dark:bg-zinc-50'></span>
+            <span className='bg-zinc-950 dark:bg-zinc-50'></span>
+          </div>
+          <div className="moving-gradient"></div>
         </div>
         <div>
           Thanks for tuning in!!

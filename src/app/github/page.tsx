@@ -4,12 +4,12 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import SocialLoading from "../components/SocialLoading";
 
-export default function Linkedin() {
+export default function Github() {
 
   const router = useRouter();
 
   useEffect(() => {
-    router.push('https://www.linkedin.com/in/tusharsharma31');
+    router.push('https://www.github.com/sharmatushar1');
   });
 
   return (

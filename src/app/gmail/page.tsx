@@ -4,12 +4,12 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import SocialLoading from "../components/SocialLoading";
 
-export default function Linkedin() {
+export default function Gmail() {
 
   const router = useRouter();
 
   useEffect(() => {
-    router.push('https://www.linkedin.com/in/tusharsharma31');
+    router.push('mailto:Sharmatushar0k@gmail.com');
   });
 
   return (

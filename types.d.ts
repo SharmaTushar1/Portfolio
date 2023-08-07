@@ -4,4 +4,5 @@ type BlogPost = {
   date: string,
   tags: string[],
   description: string,
+  timeToRead: string,
 }

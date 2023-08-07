@@ -1,8 +1,9 @@
 ---
 title: 'First Blog COPY :)'
 date: '2023-08-06'
-tags: ['tag-1', 'tag-2', 'tag-3']
+tags: ['Programming', 'tag-2', 'tag-3']
 description: 'This is the description of my test blog post'
+timeToRead: '1'
 ---
 
 # First blog (Test Blog)

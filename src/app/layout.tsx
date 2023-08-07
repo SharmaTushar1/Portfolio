@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className='bg-gray-100 dark:bg-zinc-900 text-zinc-900 dark:text-gray-100'>
+      <body className='bg-gray-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100'>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <div className='px-12 lg:px-56'>
             <Navbar />

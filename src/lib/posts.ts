@@ -32,6 +32,7 @@ export function getSortedPostsData() {
       date: matterResult.data.date,
       tags: matterResult.data.tags,
       description: matterResult.data.description,
+      timeToRead: matterResult.data.timeToRead,
     };
 
     return blogPost;
@@ -60,6 +61,7 @@ export async function getPostData(id: string) {
     date: matterResult.data.date,
     tags: matterResult.data.tags,
     description: matterResult.data.description,
+    timeToRead: matterResult.data.timeToRead,
     contentHtml
   };
 

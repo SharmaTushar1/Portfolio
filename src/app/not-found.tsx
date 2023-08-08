@@ -9,7 +9,7 @@ export default function NotFound() {
         <div className="flex justify-around w-full mt-2">
           <h2 className="text-3xl">Looks like you&#39;re lost here :/</h2>
           <hr className="px-[1px] bg-zinc-900 dark:bg-zinc-100 h-full" />
-          <button className="bg-zinc-200 dark:bg-800 rounded-full p-3">
+          <button className="bg-zinc-200 dark:bg-zinc-800 rounded-full p-3">
             Return to Home
           </button>
         </div>

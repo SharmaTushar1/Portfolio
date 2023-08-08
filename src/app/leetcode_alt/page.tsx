@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import SocialLoading from "../components/SocialLoading";
 
 export default function LeetcodeAlt() {
 
@@ -13,6 +14,7 @@ export default function LeetcodeAlt() {
 
   return (
     <div>
+      <SocialLoading />
     </div>
   );
 }

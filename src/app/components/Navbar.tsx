@@ -9,9 +9,9 @@ export default function Navbar() {
         <Link href='/' className="mx-4">Home</Link>
         <Link href='/blog' className="mx-4">Blog</Link>
         {/* <Link href='' className="mx-4">Courses</Link> */}
-        <Link href='' className="mx-4">Projects</Link>
-        <Link href='' className="mx-4">About</Link>
-        <Link href='' className="mx-4">Contact</Link>
+        <Link href='/project' className="mx-4">Projects</Link>
+        <Link href='/about' className="mx-4">About</Link>
+        <Link href='/contact' className="mx-4">Contact</Link>
         <ThemeToggleIcon />
       </div>
     </nav>

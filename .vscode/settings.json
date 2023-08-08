@@ -37,7 +37,7 @@
       // explanation or queries. Say what this thing does. etc.
       {
         "tag": "?",
-        "color": "#3498DB",
+        "color": "#50C878",
         "strikethrough": false,
         "underline": false,
         "backgroundColor": "transparent",
@@ -75,6 +75,8 @@
         "italic": false
       },
     ],
-    "reactSnippets.settings.importReactOnTop": false
+    "reactSnippets.settings.importReactOnTop": false,
+    "todo-tree.tree.showBadges": false,
+    "todo-tree.tree.scanMode": "workspace only"
 
 }

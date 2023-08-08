@@ -14,6 +14,8 @@ type formInput = {
 
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
+// FIXME: For some reason this works and sends the mail so I have pushed the code but the mail I receive is just [Object object] I have to fix this.
+
 export default function ContactUsForm() {
   const accessKey = process.env.NEXT_PUBLIC_MAIL_ACCESS_API_KEY;
   return (

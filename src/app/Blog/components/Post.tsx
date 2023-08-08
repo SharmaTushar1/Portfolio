@@ -19,13 +19,14 @@ export default function Post({post}: Props) {
       </h2>
       <p>{ description }</p>
       <br />
-      <div className='flex'>
-        <div className='flex'>
+      <div className='flex justify-between'>
+        <div className='flex w-max-[80%]'>
           {tags.map( tag => (
-            <div className='border rounded-full px-2 text-xs py-1 bg-zinc-200 dark:bg-zinc-800' key={tag}>{tag}</div>
+            <div className='border rounded-full px-2 mr-2 text-xs py-1 bg-zinc-200 dark:bg-zinc-800' key={tag}>{tag}</div>
           ))}
+          {/* TODO: for this tags also I'll have to have a different page. So, all the posts with tag Algorithms in one page, same for say front-end. */}
+          <div>{ timeToRead } min read</div>
         </div>
-        <div>{ timeToRead } min read</div>
         <p>{ formattedDate }</p>
       </div>
       <br />

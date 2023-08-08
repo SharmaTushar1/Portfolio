@@ -6,9 +6,10 @@ export default function Posts() {
 
   return (
     <section>
+      {/* TODO: Finish the UI of the blogs page. I'll use mix of medium like desing and that dude's blog. */}
       <h2 className="text-6xl font-bold">Blog</h2>
-      {/* Search Filter here */}
-      
+      {/* TODO: Search Filter here */}
+      <input type="text" />
       <div>
         {posts.map(post => (
           <Post key={post.id} post = {post}/>

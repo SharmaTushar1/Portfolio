@@ -13,6 +13,6 @@ Hi! I'm Tushar Sharma. This is my first blog!! Well, technically it is my 0th bl
 - Listening to spotify while working on this. NCS song. I love NCS. Listening to them since 2015. Song is Hollah! by Disfigure.
 - It's 03:49 pm rn.
 - Another random text to fill space and check!!!
-This much looks enough have a great day if anyone is reading this in future. Hopefully I'll have a decent job by then.
+This much looks enough have a great day if anyone is reading this in future. Hopefully I'll have a decent job by then which has good learning, pay, people and is not toxic af like the last one.
 
 > Blog written using stackedit.io

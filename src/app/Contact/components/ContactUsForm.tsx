@@ -11,85 +11,64 @@ type formInput = {
   title: string,
   body: string,
 }
-
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useState } from "react";
 
 // FIXME: For some reason this works and sends the mail so I have pushed the code but the mail I receive is just [Object object] I have to fix this.
 
 export default function ContactUsForm() {
-  const accessKey = process.env.NEXT_PUBLIC_MAIL_ACCESS_API_KEY;
+  const accessKey: string = process.env.NEXT_PUBLIC_MAIL_ACCESS_API_KEY as string;
+  const [result, setResult] = useState("");
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+
+  const onSubmit = async (event: any) => {
+    event.preventDefault();
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", accessKey);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    }).then((res) => res.json());
+
+    if (res.success) {
+      console.log("Success", res);
+      setResult(res.message);
+    } else {
+      console.log("Error", res);
+      setResult(res.message);
+    }
+  };
+
   return (
     <div>
-      <Formik
-        initialValues={{ name: '', email: '', title: '', body: '' }}
-        validate={values => {
-          const errors: formInput = {} as formInput;
-          if (!values.email) {
-            errors.email = 'Required';
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = 'Invalid email address';
-          }
-          if (!values.name) {
-            errors.name = 'Required';
-          }
-          if (!values.title) {
-            errors.title = 'Required';
-          }
-          if (!values.body) {
-            errors.body = 'Required';
-          }
-          return errors;
-        }}
-        onSubmit={async (data, e) => {
-          console.log(data);
-          await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            } as HeadersInit,
-            body: JSON.stringify({data, access_key: accessKey}),
-          })
-            .then(async (response) => {
-              let json = await response.json();
-              if (response.status == 200) {
-                window.location.href = "success.html"; // <-- add this line
-              }
-            }
-            );
-        }}
-      >
-        {({isSubmitting}) => (
-          <Form className="flex flex-col w-[90%] sm:w-[60%] items-center justify-center mx-auto" action={'https://api.web3forms.com/submit'} method="POST">
-            <input type="hidden" name="access_key" value={process.env.MAIL_ACCESS_API_KEY}></input>
-            <div className="w-full mb-2">
-              <label htmlFor="name">Name: </label>
-              <Field type="name" name="name" className="w-full"/>
-              <ErrorMessage name="name" component="div" className="text-red-300" />
-            </div>
-            <div className="w-full mb-2">
-              <label htmlFor="email">Email: </label>
-              <Field type="email" name="email" className="w-full"/>
-              <ErrorMessage name="email" component="div" className="text-red-900" />
-            </div>
-            <div className="w-full mb-2">
-              <label htmlFor="title">Title: </label>
-              <Field type="title" name="title" className="w-full"/>
-              <ErrorMessage name="title" component="div" className="text-red-900" />
-            </div>
-            <div className="w-full mb-2">
-              <label htmlFor="body">Body: </label>
-              <Field type="body" name="body" className="w-full"/>
-              <ErrorMessage name="body" component="div" className="text-red-900" />
-            </div>
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button>
-          </Form>
-        )}
-      </Formik>
+      <h1 className="text-6xl">Contact Me:</h1>
+      <form onSubmit={onSubmit} className="flex flex-col">
+        <div className="flex flex-col mt-4">
+          <label htmlFor="name" className="">Name: </label>
+          <input className="mt-2" type="text" required name="name" id="name" value={name} onChange={e=>setName(e.target.value)}/>
+        </div>
+        <div className="flex flex-col mt-4">
+          <label htmlFor="name" className="">Email: </label>
+          <input className="mt-2" type="email" required name="email" id="email" value={email} onChange={e=>setEmail(e.target.value)}/>
+        </div>
+        <div className="flex flex-col mt-4">
+          <label htmlFor="name" className="">Title: </label>
+          <input className="mt-2" type="text" required name="title" id="" value={title} onChange={e=>setTitle(e.target.value)} />
+        </div>
+        <div className="flex flex-col mt-4">
+          <label htmlFor="name" className="">Body: </label>
+          <textarea className="mt-2" name="body" required id="body" value={body} onChange={e=>setBody(e.target.value)}></textarea>
+        </div>
+        <input type="submit" className="p-2 mt-4 mx-auto bg-zinc-200 dark:bg-zinc-800 w-fit px-4 rounded-full" />
+      </form>
+      <span>{result}</span>
     </div>
   );
 }

@@ -9,8 +9,6 @@ export default function Post({post}: Props) {
   const { id, title, date, description, tags, timeToRead } = post;
   const formattedDate = getFormattedDate(date);
 
-  console.log(timeToRead);
-
   return (
     <div className='mt-2'>
       <hr className='bg-gray-300 dark:invert border-0 pt-[1px]' />

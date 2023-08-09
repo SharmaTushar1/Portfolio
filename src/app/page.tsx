@@ -22,10 +22,8 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="flex justify-center">
-        <div className="absolute bottom-4">
-          <Footer />
-        </div>
+      <div className=" mt-[19.26rem] mb-[2rem]">
+        <Footer />
       </div>
     </main>
   );

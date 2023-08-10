@@ -1,5 +1,6 @@
 import { getSortedPostsData } from "@/lib/posts";
 import Post from "./Post";
+import SearchFilter from "./SearchFilter";
 
 export default function Posts() {
   const posts = getSortedPostsData();
@@ -9,7 +10,7 @@ export default function Posts() {
       {/* TODO: Finish the UI of the blogs page. I'll use mix of medium like desing and that dude's blog. */}
       <h2 className="text-6xl font-bold">Blog</h2>
       {/* TODO: Search Filter here */}
-      <input type="text" />
+      <SearchFilter posts = {posts} />
       <div>
         {posts.map(post => (
           <Post key={post.id} post = {post}/>

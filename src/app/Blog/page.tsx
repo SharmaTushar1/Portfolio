@@ -13,6 +13,7 @@ export default function Blog() {
   const posts:BlogPost[] = getSortedPostsData();
   return (
     <div className="">
+      {/* ?? passing directly inside the page.tsx so to avoid the server side and client side errors. https://i.imgur.com/UyDX6Zi.png */}
       <Posts posts={posts} />
       <div className="mb-4 mt-4">
         <Footer />

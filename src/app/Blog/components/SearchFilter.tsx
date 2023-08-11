@@ -3,7 +3,8 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-// TODO: Finish Search bar.
+// TODO: Add tags.
+// TODO: Add Search bar icon and finish the UI design.
 
 type Props = {
   posts: BlogPost[];

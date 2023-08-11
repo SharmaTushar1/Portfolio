@@ -19,7 +19,7 @@ export function generateMetadata({ params }: {params: { blogId: string}}) {
   }
 
   return {
-    title: post.title,
+    title: `${post.title} - Tushar Sharma`,
   };
 }
 

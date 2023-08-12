@@ -1,5 +1,22 @@
-export default function Project() {
+import { Metadata } from "next";
+import Projects from "./components/Projects";
+import { allProjects, allProjectsThumbnail } from "./projects_data";
+
+
+
+export const metadata: Metadata = {
+  title: 'Projects - Tushar Sharma',
+  description: "Projects by Tushar Sharma",
+};
+
+export default function ProjectPage() {
   return (
-    <div>Project</div>
+    <div>
+      <h1 className="text-6xl font-bold">
+        Projects
+      </h1>
+      <hr className="mt-4 bg-gray-300 dark:invert border-0 pt-[1px]"/>
+      <Projects thumbnailsArray = {allProjectsThumbnail} />
+    </div>
   );
 }

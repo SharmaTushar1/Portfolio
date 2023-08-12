@@ -46,7 +46,7 @@ export default function ContactUsForm() {
 
   return (
     <div>
-      <h1 className="text-6xl font-medium">Contact Me:</h1>
+      <h1 className="text-6xl font-bold">Contact</h1>
       <form onSubmit={onSubmit} className="flex flex-col">
         <div className="flex flex-col mt-4">
           <label htmlFor="name" className="">Name: </label>

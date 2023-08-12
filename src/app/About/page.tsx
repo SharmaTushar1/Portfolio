@@ -3,6 +3,12 @@ import Footer from "../components/Footer";
 import Link from "next/link";
 import { skills } from "./skills";
 import Skill from "./components/Skill";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'About - Tushar Sharma',
+  description: "About page of Tushar Sharma's portfolio",
+};
 
 export default function About() {
 

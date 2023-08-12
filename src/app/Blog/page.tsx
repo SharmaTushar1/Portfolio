@@ -1,12 +1,18 @@
 import { getSortedPostsData } from "@/lib/posts";
 import Footer from "../components/Footer";
 import Posts from "./components/Posts";
+import { Metadata } from "next";
 
 // TODO: Add pagination
 
 // TODO: Add comments using giscus https://giscus.app/
 
 // TODO: The blogs are basically what I'll write on github.
+
+export const metadata: Metadata = {
+  title: 'Blog - Tushar Sharma',
+  description: "This is the blog page for Tushar Sharma's portfollio",
+};
 
 export default function Blog() {
 

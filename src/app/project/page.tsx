@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Projects from "./components/Projects";
-import { allProjects, allProjectsThumbnail } from "./projects_data";
+import { allProjectsThumbnail } from "./projects_data";
+import Footer from "../components/Footer";
 
 
 
@@ -17,6 +18,9 @@ export default function ProjectPage() {
       </h1>
       <hr className="mt-4 bg-gray-300 dark:invert border-0 pt-[1px]"/>
       <Projects thumbnailsArray = {allProjectsThumbnail} />
+      <div className="mb-4 mt-4">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ type Project = {
   detailedDescription: string,
   stack: string[],
   deploymentLink?: string,
-  Screenshots?: string[],
+  screenshots?: string[],
   dateAdded: string,
 
 }

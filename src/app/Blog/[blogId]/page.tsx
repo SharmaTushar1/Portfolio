@@ -1,3 +1,4 @@
+import Footer from "@/app/components/Footer";
 import getFormattedDate from "@/lib/getFormattedDate";
 import { getPostData, getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
@@ -47,6 +48,9 @@ export default async function page({ params }: {params: { blogId: string}}) {
           <Link href="/">← Back to home</Link>
         </p>
       </article>
+      <div className="mb-4 mt-8">
+        <Footer />
+      </div>
     </main>
   );
 }

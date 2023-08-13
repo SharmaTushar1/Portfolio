@@ -7,7 +7,7 @@ export default function ProjectThumbnail({ project }: { project: ProjectThumbnai
       {/* Image */}
       <div>
         <Image
-          src={"/banner.webp"}
+          src={"/image.png"}
           alt={`${project.title} Thumbnail`}
           height={0}
           width={0}

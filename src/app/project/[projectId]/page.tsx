@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import Footer from "@/app/components/Footer";
 
+// TODO: Covert this SSR to SSG
+
 export function generateMetadata({ params }: {params: { projectId: string}}) {
 
   const clickedProject = allProjects.filter(project => (params.projectId === project.title.split(' ').join('-')))[0];

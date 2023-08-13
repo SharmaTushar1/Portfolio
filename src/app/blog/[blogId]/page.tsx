@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 
 // TODO: Add more meta data tags. Look up the docs for how to improve seo next js.
 
+// TODO: Covert this SSR to SSG
+
 export function generateMetadata({ params }: {params: { blogId: string}}) {
 
   const posts = getSortedPostsData();

@@ -19,21 +19,30 @@ export default function About() {
       <div className="flex flex-col xl:flex-row w-full mt-4 p-4">
         {/* Profile pic here */}
         <div className="flex flex-col mx-auto items-center">
-          <Image src={'/banner.webp'} height={192} width={192} alt="Tushar Sharma" />
+          <Image src={'/image.png'} height={192} width={192} alt="Tushar Sharma" />
           <div className="text-3xl mt-2 font-semibold">Tushar Sharma</div>
           <div>Software Engineer</div>
         </div>
         <div className="xl:w-[70%]">
-          Tushar Sharma is a Software Engineer specialized in front end who completed his computer science degree in 2023.
+          I am a Software Engineer specialized in front end.
           <br />
           <br />
-          He thinks of engineering as an art and really feels amazed by the crazy things and power we hold as engineers. During his studies. He participated in several hackathons and tech fests. He also interned at various startups in his Junior and Senior year of college where he got a chance to work on various techs.
+          I&#39;m an engineer who loves to create things with technology. I&#39;m fascinated by the power and possibilities that engineering offers to solve real-world problems and improve lives. During my studies, I participated in several hackathons and tech fests where I learned new skills and built innovative projects. I also interned at various startups where I contributed to their growth and success by working on different technologies.
           <br />
           <br />
-          Currently, he&#39;s working as a contractor software engineer mostly on frontend based projects with a little bit of backend here and there.
+          Currently, I&#39;m working as a contractor software engineer mostly on frontend based projects with a little bit of backend here and there.
           <br />
           <br />
-          Outside of his career, he likes to workout and play guitar on his free time. He was a nerd ever since as a kid and love watching educational videos. I think of everything like an art. Whether it be a beautiful night sky or a good code. A piece of tech or even some random pattern on the sand. I am just an appreciator of art.
+          Outside of my career, I enjoy challenging myself with intense workouts and learning new songs on my guitar. I&#39;m a nerd who likes to learn new things every day. I&#39;m always curious about the science and history behind everything I watch and read.
+          <br />
+          <br />
+          I also like to travel and explore new places. I love doing fun things outside, such as running, going out on walks in parks, and appreciating nature and wildlife. I&#39;m fond of animals too and enjoy spending time with them.
+          <br />
+          <br />
+          I like to socialize with amazing people and learn from their perspectives. I believe every person, irrespective of who they are, have a story to tell.
+          <br />
+          <br />
+          
           <div className="mt-4">
             <Link href='/resume' className=" underline">
               See Resume

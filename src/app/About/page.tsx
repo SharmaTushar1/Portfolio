@@ -19,7 +19,7 @@ export default function About() {
       <div className="flex flex-col xl:flex-row w-full mt-4 p-4">
         {/* Profile pic here */}
         <div className="flex flex-col mx-auto items-center">
-          <Image src={'/../favicon.ico'} height={192} width={192} alt="Tushar Sharma" />
+          <Image src={'/banner.webp'} height={192} width={192} alt="Tushar Sharma" />
           <div className="text-3xl mt-2 font-semibold">Tushar Sharma</div>
           <div>Software Engineer</div>
         </div>

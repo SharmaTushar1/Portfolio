@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import {ThemeProvider} from './Providers';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import NavbarMobile from './components/NavbarMobile';
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <div className='px-12 lg:px-40'>
             <Navbar />
+            <NavbarMobile />
             <div className='mt-16 h-full'>
               {children}
             </div>

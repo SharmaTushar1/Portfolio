@@ -1,0 +1,12 @@
+body {
+  overflow-x: hidden;
+}
+
+#nav-drawer {
+  animation: animate 3s linear;
+}
+
+@keyframes animate {
+  from {right: 0;}
+  to {left: 0;}
+}

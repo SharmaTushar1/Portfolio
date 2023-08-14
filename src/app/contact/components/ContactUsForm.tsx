@@ -14,7 +14,7 @@ type formInput = {
 import { useState } from "react";
 
 export default function ContactUsForm() {
-  const accessKey: string = process.env.NEXT_PUBLIC_MAIL_ACCESS_API_KEY as string;
+  const accessKey: string = '6ddaf253-4506-417f-afb0-afb77fb5fa4c';
   const [result, setResult] = useState("");
 
   const [name, setName] = useState('');

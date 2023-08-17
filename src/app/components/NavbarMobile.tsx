@@ -12,7 +12,7 @@ export function Drawer() {
   const hideNavbar = () => {
     // const mobile_nav = document.getElementById('mobile-nav');
     const nav_drawer = document.getElementById("nav-drawer");
-    // nav_drawer?.classList.add('hidden');
+    nav_drawer?.classList.add('hidden'); // FIXME: Instead of adding this try to add a smooth transition but I'll have to remove this for that but that is causing scrolling on x axis bug rn.
     nav_drawer?.classList.add('translate-x-full');
     nav_drawer?.classList.remove('translate-x-0');
     document.getElementById('navbar-toggle')?.classList.toggle('hidden');

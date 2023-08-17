@@ -25,7 +25,6 @@ export default function Project({params}: {params: {projectId: string}}) {
 
   if (!clickedProject) return notFound();
 
-  console.log("asdfasdfsad hereawerasdf ",clickedProject);
   return (
     <div>
       <ProjectDetailPage project={clickedProject} />

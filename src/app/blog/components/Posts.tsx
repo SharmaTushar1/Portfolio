@@ -5,7 +5,6 @@ import Post from "./Post";
 import SearchFilter from "./SearchFilter";
 
 export default function Posts({ posts }: { posts: BlogPost[] }) {
-  console.log(posts);
   const [Search, setSearch] = useState('');
   const [filteredPosts, setFilteredPosts] = useState(posts);
   return (

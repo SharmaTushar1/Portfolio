@@ -17,7 +17,6 @@ export function Drawer() {
     nav_drawer?.classList.remove('translate-x-0');
     document.getElementById('navbar-toggle')?.classList.toggle('hidden');
     document.body.classList.toggle('overflow-y-hidden');
-    console.log("Show navbar");
   };
 
   return (
@@ -45,7 +44,6 @@ export default function NavbarMobile() {
     nav_drawer?.classList.add('translate-x-0');
     document.getElementById('navbar-toggle')?.classList.toggle('hidden');
     document.body.classList.toggle('overflow-y-hidden');
-    console.log("Show navbar");
   };
 
   return (

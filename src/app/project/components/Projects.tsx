@@ -1,4 +1,3 @@
-import { allProjects } from "../projects_data";
 import ProjectThumbnail from "./ProjectThumbnail";
 
 type Props = {
@@ -7,7 +6,6 @@ type Props = {
 }
 
 export default function Projects({thumbnailsArray}: Props) {
-  console.log(allProjects);
   return (
     <div className="flex flex-col md:flex-row md:flex-wrap items-center md:justify-between mt-12">
       {

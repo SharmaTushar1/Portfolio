@@ -12,7 +12,7 @@ export function Drawer() {
   const hideNavbar = () => {
     // const mobile_nav = document.getElementById('mobile-nav');
     const nav_drawer = document.getElementById("nav-drawer");
-    nav_drawer?.classList.add('hidden');
+    // nav_drawer?.classList.add('hidden');
     nav_drawer?.classList.add('translate-x-full');
     nav_drawer?.classList.remove('translate-x-0');
     document.getElementById('navbar-toggle')?.classList.toggle('hidden');
@@ -20,14 +20,14 @@ export function Drawer() {
   };
 
   return (
-    <div className="flex hidden justify-between translate-x-full w-screen h-screen top-0 bottom-0 right-0 absolute bg-transparent-zinc-100 dark:bg-transparent-zinc-900 p-4 pl-4" id="nav-drawer">
-      <div className="flex flex-col">
-        <Link href='/' className="mx-4">Home</Link>
-        <Link href='/blog' className="mx-4">Blog</Link>
-        {/* <Link href='' className="mx-4">Courses</Link> */}
-        <Link href='/project' className="mx-4">Projects</Link>
-        <Link href='/about' className="mx-4">About</Link>
-        <Link href='/contact' className="mx-4">Contact</Link>
+    <div className="flex hidden justify-between translate-x-full w-screen transition ease-in-out duration-1000 h-screen top-0 bottom-0 right-0 absolute bg-transparent-zinc-100 dark:bg-transparent-zinc-900 p-4 pl-4" id="nav-drawer">
+      <div className="flex flex-col justify-center items-left pl-4 w-full" id="nav-drawer-child">
+        <Link href='/' className="mx-4 text-3xl font-bold mb-4">Home</Link>
+        <Link href='/blog' className="mx-4 text-3xl font-bold mb-4">Blog</Link>
+        {/* <Link href='' className="mx-4 text-3xl font-bold mb-4">Courses</Link> */}
+        <Link href='/project' className="mx-4 text-3xl font-bold mb-4">Projects</Link>
+        <Link href='/about' className="mx-4 text-3xl font-bold mb-4">About</Link>
+        <Link href='/contact' className="mx-4 text-3xl font-bold mb-4">Contact</Link>
       </div>
       <FontAwesomeIcon className="w-6 h-6 mr-4 mt-1 cursor-pointer" icon={faClose} onClick={() => hideNavbar()} />
     </div>

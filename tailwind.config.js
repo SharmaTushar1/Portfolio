@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'transparent-zinc-100': 'rgba(244, 244, 245, 0.5)',
-        'transparent-zinc-900': 'rgba(24, 24, 27, 0.5)'
+        'transparent-zinc-100': 'rgba(244, 244, 245, 0.9)',
+        'transparent-zinc-900': 'rgba(24, 24, 27, 0.9)'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

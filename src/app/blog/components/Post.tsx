@@ -12,12 +12,12 @@ export default function Post({post}: Props) {
   return (
     <div className='mt-2'>
       <hr className='bg-gray-300 dark:invert border-0 pt-[1px]' />
-      <h2 className='font-bold text-2xl'>
+      <h2 className='font-bold text-2xl mt-4'>
         <Link href={`/blog/${id}`}>{title}</Link>
       </h2>
-      <p>{ description }</p>
+      <p className='mt-1'>{ description }</p>
       <br />
-      <div className='flex flex-col sm:flex-row justify-between'>
+      <div className='flex flex-col sm:flex-row justify-between -mt-2'>
         <div className='flex flex-col sm:flex-row w-max-[80%]'>
           <div className='flex flex-wrap -mt-2 sm:mt-0'>
             {tags.map( tag => (

@@ -12,7 +12,9 @@ export default function Posts({ posts }: { posts: BlogPost[] }) {
       {/* TODO: Finish the UI of the blogs page. I'll use mix of medium like desing and that dude's blog. */}
       <h2 className="text-6xl font-bold">Blog</h2>
       {/* TODO: Search Filter here */}
-      <SearchFilter posts = {posts} setter = {setFilteredPosts} />
+      <div className="mt-6 mb-3">
+        <SearchFilter posts = {posts} setter = {setFilteredPosts} />
+      </div>
       <div>
         {filteredPosts.map(post => (
           <Post key={post.id} post = {post}/>

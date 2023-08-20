@@ -1,6 +1,8 @@
 // ? This file will be used for the search filter in the blogs page.
 'use client';
 
+import { faFilter, faSearch, faTags } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 // TODO: Add tags.
@@ -21,8 +23,11 @@ export default function SearchFilter({posts, setter}: Props) {
   }, [search]);
 
   return (
-    <div>
-      <input type="text" placeholder="" value={search} onChange={(e) => setSearch(e.target.value)} />
+    <div className="w-full sm:w-[90%] md:w-[80%] lg:w-[60%] xl:w-[40%] relative flex items-center">
+      <input type="text" placeholder="Search Blogs..." className="p-2 px-4 w-full rounded-md bg-zinc-200 dark:bg-zinc-800 placeholder:text-zinc-400 dark:placeholder:text-zinc-600" value={search} onChange={(e) => setSearch(e.target.value)} />
+      <div className="absolute right-3" >
+        <FontAwesomeIcon icon={faTags} className="mr-2 cursor-pointer" title="Filter by tags" />
+      </div>
     </div>
   );
 }

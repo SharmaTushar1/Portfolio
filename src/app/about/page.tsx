@@ -21,9 +21,9 @@ export default function About() {
         <div className="flex flex-col mx-auto items-center">
           <Image src={'/image.png'} height={192} width={192} alt="Tushar Sharma" />
           <div className="text-3xl mt-2 font-semibold">Tushar Sharma</div>
-          <div>Software Engineer</div>
+          <div className=" text-zinc-600 dark:text-zinc-400">Software Engineer</div>
         </div>
-        <div className="xl:w-[70%]">
+        <div className="xl:w-[70%] mt-12 xl:mt-0">
           I am a Software Engineer specialized in front end.
           <br />
           <br />

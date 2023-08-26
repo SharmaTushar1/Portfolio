@@ -1,7 +1,7 @@
 type Project = {
   title: string,
   detailedDescription: string,
-  stack: string[],
+  stack: Skill[],
   deploymentLink?: string,
   screenshots?: string[],
   dateAdded: string,

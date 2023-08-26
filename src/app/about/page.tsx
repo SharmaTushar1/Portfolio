@@ -2,7 +2,7 @@ import Image from "next/image";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import { skills } from "./skills";
-import Skill from "./components/Skill";
+import Skill from "../components/Skill";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

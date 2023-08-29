@@ -4,5 +4,18 @@
 
 body {
   overflow-x: hidden;
-  transition: ease-in-out 100ms;
+  transition: ease-in-out 200ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with 0 opacity (invisible) */
+  }
+  to {
+    opacity: 1; /* End with 1 opacity (visible) */
+  }
+}
+
+* {
+  animation: fadeIn 200ms ease-in-out;
 }

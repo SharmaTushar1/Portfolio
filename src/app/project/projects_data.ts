@@ -13,7 +13,7 @@ export const allProjectsThumbnail: ProjectThumbnail[] = [
 // ? One is basically the detailed and one is thumbnail both denotes the projects so same number.
 
 export const allProjects: Project[] = [
-  {title: 'Sorting Visualizer', detailedDescription: '', stack: [
+  {title: 'Sorting Visualizer', detailedDescription: 'A project that helps visualize famous sorting algorithms. Includes algorithms like Bubble Sort, Insertion Sort, Merge Sort, and many others. The idea used is to store the comparisons that will be made and later use audio and visual effects to make it easier for the viewer to understand the working of the algorithm.', stack: [
     {skillName: 'TypeScript', skillBgColor: '#234a84'},
     {skillName: 'ReactJS', skillBgColor: '#5ed3f3'},
     {skillName: 'Next.JS', skillBgColor: '#080808'},

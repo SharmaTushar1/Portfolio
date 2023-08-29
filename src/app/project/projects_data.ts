@@ -33,7 +33,7 @@ export const allProjects: Project[] = [
     {skillName: 'TailwindCSS', skillBgColor: '#36b7f0'},
     {skillName: 'Git', skillBgColor: '#e84d31'},
     {skillName: 'Vercel', skillBgColor: '#000000'},
-    {skillName: 'Vite', skillBgColor: '#efd81d'},,
+    {skillName: 'Vite', skillBgColor: '#efd81d'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},

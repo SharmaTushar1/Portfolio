@@ -5,4 +5,6 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-export default nextConfig;
+import withVideos from 'next-videos';
+
+export default withVideos(nextConfig);

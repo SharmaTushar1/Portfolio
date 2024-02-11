@@ -29,5 +29,6 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    '@next/next/no-document-import-in-page': 'off',
   },
 };

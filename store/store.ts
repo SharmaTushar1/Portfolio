@@ -6,7 +6,8 @@ type Store = {
 };
 
 const useStore = create<Store>()((set) => ({
-  page: 'Home',
+  page:
+    (typeof window !== 'undefined' && localStorage.getItem('page')) || 'Home',
   changePage: (page) => set(() => ({ page: page })),
 }));
 

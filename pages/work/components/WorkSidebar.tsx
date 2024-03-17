@@ -25,10 +25,10 @@ const WorkSidebar = () => {
   }, [page]);
 
   return (
-    <>
+    <div>
       <Flex
         vertical
-        className="bg-red-900/5 hover:bg-black/10 text-white h-full w-40 z-10 fixed"
+        className="bg-red-900/5 hover:bg-black/10 fixed text-white h-screen z-10"
         justify="space-between"
       >
         <Flex vertical className="w-40">
@@ -54,13 +54,14 @@ const WorkSidebar = () => {
         </Flex>
         <Flex
           align="end"
-          className="text-xs relative bottom-2"
+          className="text-xs absolute bottom-2"
           justify="center"
         >
           <MusicPlayer />© {new Date().getFullYear()} Tushar Sharma
         </Flex>
       </Flex>
-    </>
+      <div className="w-min-40 bg-red-500 z-100 relative ml-40"></div>
+    </div>
   );
 };
 

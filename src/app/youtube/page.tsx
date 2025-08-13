@@ -9,7 +9,7 @@ export default function Youtube() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('https://www.youtube.com/');
+    router.push('https://www.youtube.com/Shaarmatushar1-yt');
   });
 
   return (

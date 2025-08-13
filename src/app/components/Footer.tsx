@@ -8,7 +8,7 @@ export default function Footer() {
         <Link href="https://www.linkedin.com/in/tusharsharma31" target="_blank">
           <Image className="px-2" width={48} height={48} src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn"/>
         </Link>
-        <Link href="https://www.youtube.com/SharmaTushar1-yt" target="_blank">
+        <Link href="https://www.youtube.com/@SharmaTushar1-yt" target="_blank">
           <Image className="px-2" width={48} height={48} src={'https://img.icons8.com/color/48/youtube-play.png'} alt="YouTube" />
         </Link>
         <Link href="https://www.github.com/SharmaTushar1" target="_blank">

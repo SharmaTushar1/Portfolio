@@ -9,7 +9,7 @@ export default function Twitter() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('https://www.twitter.com/sharmatusharone');
+    router.push('https://www.twitter.com/sharmatushar1');
   });
 
   return (

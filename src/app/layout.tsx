@@ -25,6 +25,9 @@ const sourceSans = Source_Sans_3({
 export const metadata: Metadata = {
   title: 'Tushar Sharma — Software Engineer',
   description: 'Tushar Sharma — Software Engineer at C3.AI. Full-stack development, data platforms, and product experience. Career, projects, and contact.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

@@ -43,7 +43,7 @@ export const experiences: Experience[] = [
     highlights: [
       'Own and improve property appraisal applications: investigate and resolve critical data ingestion issues that directly reduce customer escalations and support ticket volume.',
       'Design and ship automation that replaces manual data pipelines—dramatically cutting ingestion time and freeing the team to focus on higher-impact work.',
-      'Lead zero-downtime version upgrades of the property appraisal platform across multiple enterprise clients, coordinating releases and validation.',
+      'Zero-downtime version upgrades of the property appraisal platform across multiple enterprise clients, coordinating releases and validation.',
       'Identify and fix data anomalies in energy management applications, improving data integrity and reliability for utility clients.',
       'Contribute to internal documentation and community. Help onboard new engineers and improve the team\'s efficiency and knowledge.',
     ],

@@ -66,7 +66,7 @@ export default function ContactUsForm() {
         </div>
         <input
           type="submit"
-          className="mt-6 px-5 py-2.5 rounded-lg bg-primary-600 dark:bg-primary-500 text-white font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors cursor-pointer w-fit"
+          className="mt-6 px-5 py-2.5 rounded-lg bg-zinc-700 dark:bg-zinc-600 text-white font-medium hover:bg-zinc-800 dark:hover:bg-zinc-500 transition-colors cursor-pointer w-fit"
         />
       </form>
       <span>{result}</span>

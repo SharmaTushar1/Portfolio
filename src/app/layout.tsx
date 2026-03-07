@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Outfit, Source_Sans_3 } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import Navbar from './components/Navbar';
 import { ThemeProvider } from './Providers';
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -43,6 +44,7 @@ export default function RootLayout({
             </main>
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

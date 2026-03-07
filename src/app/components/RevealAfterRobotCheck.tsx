@@ -4,13 +4,9 @@ import { useState, useRef, useCallback, useEffect } from "react";
 
 type LayoutVariant = "stack" | "inline";
 
-const TOLERANCE = 6; // percent: thumb must be within ±TOLERANCE of target
+const END_THRESHOLD = 92; // percent: slide to end to verify
 const TRACK_WIDTH_PX = 280;
 const THUMB_SIZE_PX = 40;
-
-function getRandomTarget() {
-  return Math.floor(25 + Math.random() * 50); // 25% to 75%
-}
 
 export default function RevealAfterRobotCheck({
   children,
@@ -21,14 +17,12 @@ export default function RevealAfterRobotCheck({
 }) {
   const [verified, setVerified] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [targetPosition, setTargetPosition] = useState(50);
   const [position, setPosition] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [success, setSuccess] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
 
   const openModal = useCallback(() => {
-    setTargetPosition(getRandomTarget());
     setPosition(0);
     setSuccess(false);
     setModalOpen(true);
@@ -40,16 +34,20 @@ export default function RevealAfterRobotCheck({
     setSuccess(false);
   }, []);
 
+  const getPositionFromEvent = useCallback((clientX: number) => {
+    const track = trackRef.current;
+    if (!track) return 0;
+    const rect = track.getBoundingClientRect();
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    return (x / rect.width) * 100;
+  }, []);
+
   const updatePosition = useCallback(
     (clientX: number) => {
-      const track = trackRef.current;
-      if (!track) return;
-      const rect = track.getBoundingClientRect();
-      const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-      const pct = (x / rect.width) * 100;
+      const pct = getPositionFromEvent(clientX);
       setPosition(pct);
-      const inRange = Math.abs(pct - targetPosition) <= TOLERANCE;
-      if (inRange && !success) {
+      if (pct >= END_THRESHOLD && !success) {
+        setPosition(100);
         setSuccess(true);
         const t = setTimeout(() => {
           setVerified(true);
@@ -58,14 +56,15 @@ export default function RevealAfterRobotCheck({
         return () => clearTimeout(t);
       }
     },
-    [targetPosition, success, closeModal],
+    [getPositionFromEvent, success, closeModal],
   );
 
   const handlePointerDown = useCallback(
     (e: React.PointerEvent) => {
       if (success) return;
       e.preventDefault();
-      (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
+      const target = e.currentTarget as HTMLElement;
+      target.setPointerCapture(e.pointerId);
       setIsDragging(true);
       updatePosition(e.clientX);
     },
@@ -75,12 +74,18 @@ export default function RevealAfterRobotCheck({
   const handlePointerMove = useCallback(
     (e: React.PointerEvent) => {
       if (!isDragging || success) return;
+      e.preventDefault();
       updatePosition(e.clientX);
     },
     [isDragging, success, updatePosition],
   );
 
   const handlePointerUp = useCallback(() => {
+    setIsDragging(false);
+    if (!success) setPosition(0);
+  }, [success]);
+
+  const handlePointerCancel = useCallback(() => {
     setIsDragging(false);
     if (!success) setPosition(0);
   }, [success]);
@@ -157,15 +162,14 @@ export default function RevealAfterRobotCheck({
             </div>
 
             <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-              Drag the slider to the line to verify.
+              Slide to the end to verify.
             </p>
 
             <div className="relative" style={{ width: TRACK_WIDTH_PX }}>
-              {/* Track with target line */}
               <div
                 ref={trackRef}
                 role="slider"
-                aria-label="Drag to the marked position"
+                aria-label="Slide to the end to verify"
                 aria-valuenow={Math.round(position)}
                 aria-valuemin={0}
                 aria-valuemax={100}
@@ -174,6 +178,8 @@ export default function RevealAfterRobotCheck({
                 onPointerMove={handlePointerMove}
                 onPointerUp={handlePointerUp}
                 onPointerLeave={handlePointerUp}
+                onPointerCancel={handlePointerCancel}
+                style={{ touchAction: "none" }}
                 className={`
                   relative h-12 rounded-full border-2 border-zinc-300 dark:border-zinc-600
                   bg-zinc-100 dark:bg-zinc-800 select-none
@@ -181,12 +187,6 @@ export default function RevealAfterRobotCheck({
                   ${success ? "border-green-500 dark:border-green-600" : ""}
                 `}
               >
-                {/* Target position line */}
-                <div
-                  className="absolute top-0 bottom-0 w-0.5 bg-primary-500 dark:bg-primary-400 z-10 pointer-events-none"
-                  style={{ left: `${targetPosition}%` }}
-                  aria-hidden
-                />
                 {/* Fill up to thumb */}
                 <div
                   className="absolute inset-y-0 left-0 rounded-l-full bg-primary-500/20 dark:bg-primary-400/20 transition-all duration-75"

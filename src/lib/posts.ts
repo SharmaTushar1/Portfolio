@@ -1,52 +1,50 @@
-// ? This is the file where I am converting the markdown file to html and sorting the data based on date and returning it.
-
-// ? First we will import the files from the src/blogposts directory.
-
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter'; // ? We will use gray matter to read the meta data from the markdown
+import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import { externalBlogs } from '@/data/externalBlogs';
 
-const postsDirectory = path.join(process.cwd(), 'blogposts'); // ? imported the posts directory
+const postsDirectory = path.join(process.cwd(), 'blogposts');
 
-// ? This function returns an array of all the metadata. First we map to get the metadata of each one and then return the sorted of that.
-
-export function getSortedPostsData() {
-  // ? get all the file names in the blogposts directory synchronously i.e. this will block the code execution until it gets done.
+export function getSortedPostsData(): BlogPost[] {
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map(fileName => {
-
-    // ? id here is basically the name of the file. So we will be removing .md out of the file name to get the id.
+  const localPosts: BlogPost[] = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, '');
-
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-    // parse the metadata of the post markdown files.
     const matterResult = matter(fileContents);
+    const tags = matterResult.data.tags ?? [];
+    const pinned = Boolean(matterResult.data.pinned);
 
-    const blogPost: BlogPost = {
+    return {
       id,
       title: matterResult.data.title,
       date: matterResult.data.date,
-      tags: matterResult.data.tags,
-      description: matterResult.data.description,
-      timeToRead: matterResult.data.timeToRead,
+      tags: Array.isArray(tags) ? tags : [],
+      description: matterResult.data.description ?? '',
+      timeToRead: String(matterResult.data.timeToRead ?? ''),
+      pinned,
     };
-
-    return blogPost;
   });
 
-  return allPostsData.sort((a, b) => a.date < b.date ? 1:-1);
+  const combined: BlogPost[] = [
+    ...localPosts,
+    ...externalBlogs,
+  ];
+
+  return combined.sort((a, b) => {
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return dateB - dateA;
+  });
 }
 
-// ? Function to only get one blog post with html and metadata.
-
-export async function getPostData(id: string) {
+export async function getPostData(id: string): Promise<BlogPost & { contentHtml: string }> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-
   const matterResult = matter(fileContents);
 
   const processedContent = await remark()
@@ -54,16 +52,15 @@ export async function getPostData(id: string) {
     .process(matterResult.content);
 
   const contentHtml = processedContent.toString();
+  const tags = matterResult.data.tags ?? [];
 
-  const blogPostWithHtml: BlogPost & { contentHtml: string } = {
+  return {
     id,
     title: matterResult.data.title,
     date: matterResult.data.date,
-    tags: matterResult.data.tags,
-    description: matterResult.data.description,
-    timeToRead: matterResult.data.timeToRead,
-    contentHtml
+    tags: Array.isArray(tags) ? tags : [],
+    description: matterResult.data.description ?? '',
+    timeToRead: String(matterResult.data.timeToRead ?? ''),
+    contentHtml,
   };
-
-  return blogPostWithHtml;
 }

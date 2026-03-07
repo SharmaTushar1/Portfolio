@@ -1,18 +1,24 @@
 'use client';
 
-import Link from "next/link";
-import ThemeToggleIcon from "./ThemeToggleIcon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import "./NavbarMobile.css";
+import Link from 'next/link';
+import ThemeToggleIcon from './ThemeToggleIcon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import './NavbarMobile.css';
 
-export function Drawer() {
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/project', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
 
+function Drawer() {
   const hideNavbar = () => {
-    // const mobile_nav = document.getElementById('mobile-nav');
-    const nav_drawer = document.getElementById("nav-drawer");
-    nav_drawer?.classList.add('hidden'); // FIXME: Instead of adding this try to add a smooth transition but I'll have to remove this for that but that is causing scrolling on x axis bug rn.
+    const nav_drawer = document.getElementById('nav-drawer');
+    nav_drawer?.classList.add('hidden');
     nav_drawer?.classList.add('translate-x-full');
     nav_drawer?.classList.remove('translate-x-0');
     document.getElementById('navbar-toggle')?.classList.toggle('hidden');
@@ -20,25 +26,37 @@ export function Drawer() {
   };
 
   return (
-    <div className="flex hidden justify-between translate-x-full w-screen transition ease-in-out duration-1000 h-screen top-0 bottom-0 right-0 absolute bg-transparent-zinc-100 dark:bg-transparent-zinc-900 p-4 pl-4" id="nav-drawer">
-      <div className="flex flex-col justify-center items-left pl-4 w-full" id="nav-drawer-child">
-        <Link href='/' className="mx-4 text-3xl font-bold mb-4">Home</Link>
-        <Link href='/blog' className="mx-4 text-3xl font-bold mb-4">Blog</Link>
-        {/* <Link href='' className="mx-4 text-3xl font-bold mb-4">Courses</Link> */}
-        <Link href='/project' className="mx-4 text-3xl font-bold mb-4">Projects</Link>
-        <Link href='/about' className="mx-4 text-3xl font-bold mb-4">About</Link>
-        <Link href='/contact' className="mx-4 text-3xl font-bold mb-4">Contact</Link>
+    <div
+      className="flex hidden justify-between translate-x-full w-screen transition ease-in-out duration-300 h-screen top-0 bottom-0 right-0 absolute bg-white dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-800 p-6 pt-20"
+      id="nav-drawer"
+    >
+      <div className="flex flex-col gap-4 pl-2 w-full" id="nav-drawer-child">
+        {navLinks.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className="text-xl font-heading font-semibold text-zinc-700 dark:text-zinc-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            onClick={hideNavbar}
+          >
+            {label}
+          </Link>
+        ))}
       </div>
-      <FontAwesomeIcon className="w-6 h-6 mr-4 mt-1 cursor-pointer" icon={faClose} onClick={() => hideNavbar()} />
+      <button
+        type="button"
+        aria-label="Close menu"
+        className="absolute top-6 right-6 p-2 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
+        onClick={hideNavbar}
+      >
+        <FontAwesomeIcon className="w-6 h-6" icon={faClose} />
+      </button>
     </div>
   );
 }
 
 export default function NavbarMobile() {
-
   const showNavbar = () => {
-    // const mobile_nav = document.getElementById('mobile-nav');
-    const nav_drawer = document.getElementById("nav-drawer"); //! Don't change. Won't work if it's outside the scope as the nav_drawer is not rendered yet.
+    const nav_drawer = document.getElementById('nav-drawer');
     nav_drawer?.classList.remove('hidden');
     nav_drawer?.classList.remove('translate-x-full');
     nav_drawer?.classList.add('translate-x-0');
@@ -47,11 +65,19 @@ export default function NavbarMobile() {
   };
 
   return (
-    <div className="sm:hidden" id="mobile-nav">
-      <div className="flex w-full flex-row-reverse mt-4">
-        <div className="flex items-center justify-center">
+    <div className="sm:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800" id="mobile-nav">
+      <div className="container-content flex flex-row-reverse items-center h-16">
+        <div className="flex items-center gap-3">
           <ThemeToggleIcon />
-          <FontAwesomeIcon className='w-6 h-6 cursor-pointer' id={"navbar-toggle"} icon={faBars} onClick={() => showNavbar()} />
+          <button
+            type="button"
+            aria-label="Open menu"
+            id="navbar-toggle"
+            className="p-2 text-zinc-600 dark:text-zinc-400"
+            onClick={showNavbar}
+          >
+            <FontAwesomeIcon className="w-6 h-6" icon={faBars} />
+          </button>
         </div>
       </div>
       <Drawer />

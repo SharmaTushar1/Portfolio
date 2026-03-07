@@ -1,15 +1,15 @@
 type Project = {
-  title: string,
-  detailedDescription: string,
-  stack: Skill[],
-  deploymentLink?: string,
-  screenshots?: string[],
-  dateAdded: string,
-
-}
+  title: string;
+  detailedDescription: string;
+  stack: Skill[];
+  deploymentLink?: string;
+  repoLink?: string;
+  screenshots?: string[];
+  dateAdded: string;
+};
 
 type ProjectThumbnail = {
-  image: string,
-  title: string,
-  briefDescription: string,
-}
+  image: string;
+  title: string;
+  briefDescription: string;
+};

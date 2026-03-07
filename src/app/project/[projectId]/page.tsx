@@ -26,9 +26,9 @@ export default function Project({params}: {params: {projectId: string}}) {
   if (!clickedProject) return notFound();
 
   return (
-    <div>
+    <div className="flex flex-col w-full">
       <ProjectDetailPage project={clickedProject} />
-      <div className="mb-4 mt-4">
+      <div className="mt-section">
         <Footer />
       </div>
     </div>

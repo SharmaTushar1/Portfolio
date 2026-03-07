@@ -64,7 +64,10 @@ export default function ContactUsForm() {
           <label htmlFor="name" className="">Body: </label>
           <textarea className="mt-2" name="body" required id="body" value={body} onChange={e=>setBody(e.target.value)}></textarea>
         </div>
-        <input type="submit" className="p-2 mt-4 mx-auto bg-zinc-200 dark:bg-zinc-800 w-fit px-4 rounded-full" />
+        <input
+          type="submit"
+          className="mt-6 px-5 py-2.5 rounded-lg bg-primary-600 dark:bg-primary-500 text-white font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors cursor-pointer w-fit"
+        />
       </form>
       <span>{result}</span>
     </div>

@@ -25,7 +25,7 @@ export const allProjects: Project[] = [
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
-  ], deploymentLink: 'https://sorting-visualizer-liard.vercel.app/', screenshots: ['/Sorting-visualizer-ss-1.png','/Sorting-visualizer-ss-2.png','/Sorting-visualizer-ss-3.png','/Sorting-visualizer-ss-4.png','/Sorting-visualizer-ss-5.png'], dateAdded: new Date().toLocaleString()},
+  ], deploymentLink: 'https://sorting-visualizer-liard.vercel.app/', repoLink: 'https://github.com/SharmaTushar1/sorting-visualizer', screenshots: ['/Sorting-visualizer-ss-1.png','/Sorting-visualizer-ss-2.png','/Sorting-visualizer-ss-3.png','/Sorting-visualizer-ss-4.png','/Sorting-visualizer-ss-5.png'], dateAdded: new Date().toLocaleString()},
   {title: 'Project 2', detailedDescription: 'lorem ipsum dolor sit amet, consectetur adip eu fugiat nulla pariatur et accusam et', stack: [
     {skillName: 'JavaScript', skillBgColor: '#234a84'},
     {skillName: 'ReactJS', skillBgColor: '#5ed3f3'},
@@ -37,7 +37,7 @@ export const allProjects: Project[] = [
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
-  ], deploymentLink: 'https://3-d-clothes-visualizer.vercel.app/', screenshots: ['/3d-clothes-ss1.png','/3d-clothes-ss2.png','/3d-clothes-ss3.png', '/3d-clothes-ss4.png'], dateAdded: new Date().toLocaleString()},
+  ], deploymentLink: 'https://3-d-clothes-visualizer.vercel.app/', repoLink: 'https://github.com/SharmaTushar1/3-d-clothes-visualizer', screenshots: ['/3d-clothes-ss1.png','/3d-clothes-ss2.png','/3d-clothes-ss3.png', '/3d-clothes-ss4.png'], dateAdded: new Date().toLocaleString()},
   {title: 'Project 3', detailedDescription: 'lorem ipsum dolor sit amet, consectetur adip eu fugiat nulla pariatur et accusam et', stack: [
     {skillName: 'TypeScript', skillBgColor: '#234a84'},
     {skillName: 'ReactJS', skillBgColor: '#5ed3f3'},
@@ -50,7 +50,7 @@ export const allProjects: Project[] = [
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
-  ], deploymentLink: 'www.google.com', screenshots: ['/image.png','/image.png','/image.png'], dateAdded: new Date().toLocaleString()},
+  ], screenshots: ['/image.png','/image.png','/image.png'], dateAdded: new Date().toLocaleString()},
   {title: 'Project 4', detailedDescription: 'lorem ipsum dolor sit amet, consectetur adip eu fugiat nulla pariatur et accusam et', stack: [
     {skillName: 'TypeScript', skillBgColor: '#234a84'},
     {skillName: 'ReactJS', skillBgColor: '#5ed3f3'},
@@ -63,7 +63,7 @@ export const allProjects: Project[] = [
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
-  ], deploymentLink: 'www.google.com', screenshots: ['/image.png','/image.png','/image.png'], dateAdded: new Date().toLocaleString()},
+  ], screenshots: ['/image.png','/image.png','/image.png'], dateAdded: new Date().toLocaleString()},
   {title: 'Project 5', detailedDescription: 'lorem ipsum dolor sit amet, consectetur adip eu fugiat nulla pariatur et accusam et', stack: [
     {skillName: 'TypeScript', skillBgColor: '#234a84'},
     {skillName: 'ReactJS', skillBgColor: '#5ed3f3'},
@@ -76,7 +76,7 @@ export const allProjects: Project[] = [
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
-  ], deploymentLink: 'www.google.com', screenshots: ['/image.png','/image.png','/image.png'], dateAdded: new Date().toLocaleString()},
+  ], screenshots: ['/image.png','/image.png','/image.png'], dateAdded: new Date().toLocaleString()},
   {title: 'Project 6', detailedDescription: 'lorem ipsum dolor sit amet, consectetur adip eu fugiat nulla pariatur et accusam et', stack: [
     {skillName: 'TypeScript', skillBgColor: '#234a84'},
     {skillName: 'ReactJS', skillBgColor: '#5ed3f3'},
@@ -89,7 +89,7 @@ export const allProjects: Project[] = [
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
     // {skillName: 'TypeScript', skillBgColor: '#234a84'},
-  ], deploymentLink: 'www.google.com', screenshots: ['/image.png','/image.png','/image.png'], dateAdded: new Date().toLocaleString()},
+  ], screenshots: ['/image.png','/image.png','/image.png'], dateAdded: new Date().toLocaleString()},
   {title: 'Project 7', detailedDescription: 'lorem ipsum dolor sit amet, consectetur adip eu fugiat nulla pariatur et accusam et', stack: [
     {skillName: 'TypeScript', skillBgColor: '#234a84'},
     {skillName: 'ReactJS', skillBgColor: '#5ed3f3'},

@@ -2,20 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-bg: 250 250 250;
+  --color-text: 24 24 27;
+  --color-text-muted: 82 82 91;
+  --color-border: 228 228 231;
+  --color-accent: 37 99 235;
+}
+
+.dark {
+  --color-bg: 18 18 18;
+  --color-text: 250 250 250;
+  --color-text-muted: 161 161 170;
+  --color-border: 63 63 70;
+  --color-accent: 96 165 250;
+}
+
 body {
   overflow-x: hidden;
-  transition: ease-in-out 200ms;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0; /* Start with 0 opacity (invisible) */
+    opacity: 0;
   }
   to {
-    opacity: 1; /* End with 1 opacity (visible) */
+    opacity: 1;
   }
 }
 
 * {
   animation: fadeIn 200ms ease-in-out;
+}
+
+@layer components {
+  .section-title {
+    @apply font-heading text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100;
+  }
+  .section-divider {
+    @apply mt-4 h-px bg-zinc-200 dark:bg-zinc-700 border-0;
+  }
+  .container-content {
+    @apply mx-auto max-w-content w-full px-6 sm:px-8 lg:px-12;
+  }
 }

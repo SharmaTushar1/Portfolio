@@ -185,9 +185,8 @@ export default function RevealAfterRobotCheck({
                     absolute top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full
                     shadow-md transition-colors duration-200
                     ${success
-                      ? 'bg-green-500 dark:bg-green-600 text-white'
-                      : 'bg-white dark:bg-zinc-700 border-2 border-zinc-300 dark:border-zinc-600'
-                    }
+                    ? 'bg-green-500 dark:bg-green-600 text-white'
+                    : 'bg-white dark:bg-zinc-700 border-2 border-zinc-300 dark:border-zinc-600'}
                   `}
                   style={{
                     left: `max(0px, min(calc(${position}% - ${THUMB_SIZE_PX / 2}px), calc(100% - ${THUMB_SIZE_PX}px)))`,

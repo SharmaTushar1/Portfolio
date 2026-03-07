@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect } from "react";
 
-type LayoutVariant = 'stack' | 'inline';
+type LayoutVariant = "stack" | "inline";
 
 const TOLERANCE = 6; // percent: thumb must be within ±TOLERANCE of target
 const TRACK_WIDTH_PX = 280;
@@ -14,7 +14,7 @@ function getRandomTarget() {
 
 export default function RevealAfterRobotCheck({
   children,
-  variant = 'stack',
+  variant = "stack",
 }: {
   children: React.ReactNode;
   variant?: LayoutVariant;
@@ -58,7 +58,7 @@ export default function RevealAfterRobotCheck({
         return () => clearTimeout(t);
       }
     },
-    [targetPosition, success, closeModal]
+    [targetPosition, success, closeModal],
   );
 
   const handlePointerDown = useCallback(
@@ -69,7 +69,7 @@ export default function RevealAfterRobotCheck({
       setIsDragging(true);
       updatePosition(e.clientX);
     },
-    [success, updatePosition]
+    [success, updatePosition],
   );
 
   const handlePointerMove = useCallback(
@@ -77,7 +77,7 @@ export default function RevealAfterRobotCheck({
       if (!isDragging || success) return;
       updatePosition(e.clientX);
     },
-    [isDragging, success, updatePosition]
+    [isDragging, success, updatePosition],
   );
 
   const handlePointerUp = useCallback(() => {
@@ -88,13 +88,13 @@ export default function RevealAfterRobotCheck({
   useEffect(() => {
     if (!modalOpen) return;
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === "Escape") closeModal();
     };
-    document.addEventListener('keydown', handleEscape);
-    document.body.style.overflow = 'hidden';
+    document.addEventListener("keydown", handleEscape);
+    document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = '';
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "";
     };
   }, [modalOpen, closeModal]);
 
@@ -109,7 +109,7 @@ export default function RevealAfterRobotCheck({
         onClick={openModal}
         className={`
           text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline
-          ${variant === 'inline' ? 'inline-flex' : 'block'}
+          ${variant === "inline" ? "inline-flex" : "block"}
         `}
       >
         Verify to show contact details
@@ -128,7 +128,10 @@ export default function RevealAfterRobotCheck({
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-4">
-              <h2 id="verify-dialog-title" className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+              <h2
+                id="verify-dialog-title"
+                className="text-lg font-semibold text-zinc-900 dark:text-zinc-100"
+              >
                 Verify to show contact details
               </h2>
               <button
@@ -137,8 +140,18 @@ export default function RevealAfterRobotCheck({
                 className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
                 aria-label="Close"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
@@ -165,7 +178,7 @@ export default function RevealAfterRobotCheck({
                   relative h-12 rounded-full border-2 border-zinc-300 dark:border-zinc-600
                   bg-zinc-100 dark:bg-zinc-800 select-none
                   cursor-grab active:cursor-grabbing
-                  ${success ? 'border-green-500 dark:border-green-600' : ''}
+                  ${success ? "border-green-500 dark:border-green-600" : ""}
                 `}
               >
                 {/* Target position line */}
@@ -184,9 +197,11 @@ export default function RevealAfterRobotCheck({
                   className={`
                     absolute top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full
                     shadow-md transition-colors duration-200
-                    ${success
-                    ? 'bg-green-500 dark:bg-green-600 text-white'
-                    : 'bg-white dark:bg-zinc-700 border-2 border-zinc-300 dark:border-zinc-600'}
+                    ${
+                      success
+                        ? "bg-green-500 dark:bg-green-600 text-white"
+                        : "bg-white dark:bg-zinc-700 border-2 border-zinc-300 dark:border-zinc-600"
+                    }
                   `}
                   style={{
                     left: `max(0px, min(calc(${position}% - ${THUMB_SIZE_PX / 2}px), calc(100% - ${THUMB_SIZE_PX}px)))`,
@@ -195,12 +210,32 @@ export default function RevealAfterRobotCheck({
                   }}
                 >
                   {success ? (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   ) : (
-                    <svg className="w-5 h-5 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <svg
+                      className="w-5 h-5 text-zinc-500 dark:text-zinc-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
                     </svg>
                   )}
                 </div>

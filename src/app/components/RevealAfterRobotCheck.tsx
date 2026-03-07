@@ -197,10 +197,9 @@ export default function RevealAfterRobotCheck({
                   className={`
                     absolute top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full
                     shadow-md transition-colors duration-200
-                    ${
-                      success
-                        ? "bg-green-500 dark:bg-green-600 text-white"
-                        : "bg-white dark:bg-zinc-700 border-2 border-zinc-300 dark:border-zinc-600"
+                    ${success
+                      ? "bg-green-500 dark:bg-green-600 text-white"
+                      : "bg-white dark:bg-zinc-700 border-2 border-zinc-300 dark:border-zinc-600"
                     }
                   `}
                   style={{

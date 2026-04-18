@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 import { education, experiences } from '@/data/experience';
 import RevealAfterRobotCheck from '../components/RevealAfterRobotCheck';
 
-const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@SharmaTushar1-yt';
+const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@hindwantushar';
 // Add your YouTube video IDs to embed them (find in the video URL: youtube.com/watch?v=VIDEO_ID)
 const ABOUT_YOUTUBE_VIDEO_IDS: string[] = [];
 

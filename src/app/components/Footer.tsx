@@ -3,7 +3,7 @@ import Link from 'next/link';
 const socialLinks = [
   { href: 'https://www.linkedin.com/in/tusharsharma31', label: 'LinkedIn', icon: 'linkedin' },
   { href: 'https://www.instagram.com/hindwantushar', label: 'Instagram', icon: 'instagram' },
-  { href: 'https://www.youtube.com/@SharmaTushar1-yt', label: 'YouTube', icon: 'youtube' },
+  { href: 'https://www.youtube.com/@hindwantushar', label: 'YouTube', icon: 'youtube' },
   { href: 'https://www.github.com/SharmaTushar1', label: 'GitHub', icon: 'github' },
   { href: 'mailto:sharmatushar0k@gmail.com', label: 'Gmail', icon: 'gmail' },
   { href: 'https://www.twitter.com/SharmaTushar1', label: 'Twitter', icon: 'twitter' },
